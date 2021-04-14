@@ -1,9 +1,13 @@
 # 42_libft
 
-**Usage**
+**Compile**
 ```
 make
 ```
+```
+make bonus
+```
+**Usage**
 ```
 gcc [Your Main] [Other Files] libft.a
 ```
