@@ -37,7 +37,7 @@ man 名前
 	- strdup
 - ## 他の関数一覧
 	### 使用関数 `なし`
-	```
+	```c
 	char *ft_strmapi(char const *s, char (*f)(unsigned int start, size_t len)
 	```
 	### 使用関数 `malloc`, `free`
