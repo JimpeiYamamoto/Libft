@@ -37,22 +37,41 @@ man 名前
 	- strdup
 - ## 他の関数一覧
 	### 使用関数 `なし`
-	- char \*ft_strmapi(char const \*s, char (\*f)(unsigned
+	```
+	char *ft_strmapi(char const *s, char (*f)(unsigned int start, size_t len)
+	```
 	### 使用関数 `malloc`, `free`
-	- char *ft_substr(char const *s, unsigned int start,
-	size_t len)
-	- char *ft_strjoin(char const *s1, char const *s2)
-	- char *ft_strtrim(char const *s1, char const *set)
-	- char **ft_split(char const *s, char c)
-	- char *ft_itoa(int n)
-	int, char))
-	- void ft_striteri(char *s, void (*f)(unsigned int,
-	char*))
+	```
+	 char *ft_substr(char const *s, unsigned int start, size_t len)
+	 ```
+	```
+	char *ft_strjoin(char const *s1, char const *s2)
+	```
+	```
+	char *ft_strtrim(char const *s1, char const *set)
+	```
+	```
+	char **ft_split(char const *s, char c)
+	```
+	```
+	char *ft_itoa(int n)
+	```
+	```
+	void ft_striteri(char *s, void (*f)(unsigned int, char*))
+	```
 	### 使用関数 `write`
-	- void ft_putchar_fd(char c, int fd)
-	- void ft_putstr_fd(char *s, int fd)
-	- void ft_putendl_fd(char *s, int fd)
-	- void ft_putnbr_fd(int n, int fd)
+	```
+	void ft_putchar_fd(char c, int fd)
+	```
+	```
+	void ft_putstr_fd(char *s, int fd)
+	```
+	```
+	void ft_putendl_fd(char *s, int fd)
+	```
+	```
+	void ft_putnbr_fd(int n, int fd)
+	```
 ## **コンパイル方法**
 ```
 make
