@@ -5,7 +5,7 @@
 make
 ```
 ```
-make bonus
+make bonus*
 ```
 **Usage**
 ```
