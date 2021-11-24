@@ -1,13 +1,13 @@
 # 42_libft
 
-## **概要**  
+## 概要  
 C言語の標準関数、他の言語で標準としてよく使われる関数、および線形リストを扱う関数のライブラリです。  
 関数の名前の頭に`ft_`を付けています。
 ### 例
 ```
 strlen -> ft_strlen
 ```
-### C言語の標準関数の詳細を確認する場合には以下のコマンドを使用してください。
+### C言語の標準関数の参照
 ```
 man 名前
 ```
@@ -110,14 +110,37 @@ man 名前
 	```c
 	t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	```
-## **コンパイル方法**
+## 使用方法
+### ①インストール
 ```
-make
+git clone git@github.com:JimpeiYamamoto/42_libft.git libft
 ```
 ```
-make bonus*
+cd libft
 ```
-## **使い方**
+### ②コンパイル
+- #### 線形リストなしライブラリ
+	```
+	make
+	```
+- #### 線形リストありライブラリ
+	```
+	make bonus
+	```
+	`libft.a` ファイルが生成されます。
+### ③ライブラリとヘッダーファイルをコピー  
+`path` に使用したいフォルダを指定
+```
+cp libft.a [path]
+cp libft.h [path]
+```
+### ④include
+使用する`.c`ファイルの上部に以下を記載
+```c
+#include "libft.h"
+```
+### ⑤コンパイル
 ```
 gcc [Your Main] [Other Files] libft.a
 ```
+#### ぜひ使ってください :)
