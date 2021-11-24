@@ -72,6 +72,44 @@ man 名前
 	```c
 	void ft_putnbr_fd(int n, int fd)
 	```
+
+- ## 線形リスト用の関数一覧
+	### 線形リストの構造体
+	```c
+	typedef struct s_list
+	{
+		void *content;
+		struct s_list *next;
+	} t_list;
+	```
+	### 使用関数 `malloc` `free`
+	```c
+	t_list *ft_lstnew(void *content);
+	```
+	```c
+	void ft_lstadd_front(t_list **lst, t_list *new)
+	```
+	```c
+	int ft_lstsize(t_list *lst)
+	```
+	```c
+	t_list *ft_lstlast(t_list *lst)
+	```
+	```c
+	void ft_lstadd_back(t_list **lst, t_list *new)
+	```
+	```c
+	void ft_lstdelone(t_list *lst, void (*del)(void*))
+	```
+	```c
+	void ft_lstclear(t_list **lst, void (*del)(void*))
+	```
+	```c
+	void ft_lstiter(t_list *lst, void (*f)(void *))
+	```
+	```c
+	t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+	```
 ## **コンパイル方法**
 ```
 make
