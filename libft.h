@@ -6,7 +6,7 @@
 /*   By: yjimpei <yjimpei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:23:43 by yjimpei           #+#    #+#             */
-/*   Updated: 2022/04/24 15:44:13 by yjimpei          ###   ########.fr       */
+/*   Updated: 2022/04/24 16:50:37 by yjimpei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_free(void *ptr);
 void	ft_freepptr(void **pptr);
+t_bool	ft_isallstr(char *str, int(f)(char));
 
 #endif
