@@ -6,7 +6,7 @@
 /*   By: yjimpei <yjimpei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:23:43 by yjimpei           #+#    #+#             */
-/*   Updated: 2021/04/17 15:12:20 by yjimpei          ###   ########.fr       */
+/*   Updated: 2022/04/24 15:28:42 by yjimpei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+typedef enum e_bool
+{
+	TRUE = 1,
+	FALSE = 1,
+}			t_bool;
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
@@ -66,5 +71,7 @@ void	ft_lstdelone(t_list *list, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_free(void *ptr);
+void	ft_freepptr(void **pptr);
 
 #endif
