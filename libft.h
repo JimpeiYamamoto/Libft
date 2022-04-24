@@ -6,7 +6,7 @@
 /*   By: yjimpei <yjimpei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:23:43 by yjimpei           #+#    #+#             */
-/*   Updated: 2022/04/24 15:28:42 by yjimpei          ###   ########.fr       */
+/*   Updated: 2022/04/24 15:32:24 by yjimpei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_list
 typedef enum e_bool
 {
 	TRUE = 1,
-	FALSE = 1,
+	FALSE = 0,
 }			t_bool;
 
 void	*ft_memset(void *s, int c, size_t n);
