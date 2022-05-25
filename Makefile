@@ -5,37 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yjimpei <yjimpei@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/15 23:52:58 by yjimpei           #+#    #+#              #
-#    Updated: 2022/04/24 16:50:49 by yjimpei          ###   ########.fr        #
+#    Created: 2021/05/14 14:04:18 by yjimpei           #+#    #+#              #
+#    Updated: 2021/05/28 02:06:28 by yjimpei          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-REG_OBJ_FILES = ft_memset.o ft_putchar_fd.o ft_strncmp.o ft_substr.o ft_memchr.o ft_isalpha.o ft_strrchr.o ft_toupper.o ft_split.o ft_memmove.o ft_strmapi.o ft_strtrim.o ft_strdup.o ft_calloc.o ft_strlcat.o ft_tolower.o ft_atoi.o ft_isalnum.o ft_itoa.o ft_putstr_fd.o ft_isdigit.o ft_strnstr.o ft_memcmp.o ft_strlcpy.o ft_strlen.o ft_strjoin.o ft_isascii.o ft_memcpy.o ft_strchr.o ft_bzero.o ft_putnbr_fd.o ft_putendl_fd.o ft_isprint.o ft_memccpy.o ft_free.o ft_freepptr.o ft_isallstr.o
-BONUS_OBJ_FILES = ft_lstadd_front.o ft_lstdelone.o ft_lstadd_back.o ft_lstlast.o ft_lstnew.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_lstsize.o
-HEADER_FILES = libft.h
+NAME = libftprintf.a
+LIBFT_OBJ_FILES =	libft/ft_memset.o libft/ft_putchar_fd.o libft/ft_strncmp.o libft/ft_substr.o libft/ft_memchr.o libft/ft_isalpha.o libft/ft_strrchr.o libft/ft_toupper.o libft/ft_split.o libft/ft_memmove.o libft/ft_strmapi.o libft/ft_strtrim.o libft/ft_strdup.o libft/ft_calloc.o libft/ft_strlcat.o libft/ft_tolower.o libft/ft_atoi.o libft/ft_isalnum.o libft/ft_itoa.o libft/ft_putstr_fd.o libft/ft_isdigit.o libft/ft_strnstr.o 
+LIBFT_OBJ_FILES +=	libft/ft_memcmp.o libft/ft_strlcpy.o libft/ft_strlen.o 
+LIBFT_OBJ_FILES +=	libft/ft_strjoin.o libft/ft_isascii.o libft/ft_memcpy.o libft/ft_strchr.o libft/ft_bzero.o
+LIBFT_OBJ_FILES +=	libft/ft_putnbr_fd.o libft/ft_putendl_fd.o libft/ft_isprint.o 
+LIBFT_OBJ_FILES +=	libft/ft_memccpy.o libft/ft_lstadd_front.o libft/ft_lstdelone.o libft/ft_lstadd_back.o libft/ft_lstlast.o
+LIBFT_OBJ_FILES +=	libft/ft_lstnew.o libft/ft_lstclear.o libft/ft_lstiter.o libft/ft_lstmap.o libft/ft_lstsize.o
+FT_PRINTF_OBJ_FILES =	srcs/ft_printf.o srcs/ft_utoa.o srcs/ft_utoh.o srcs/ft_utof2.o srcs/put_valious.o
+FT_PRINTF_OBJ_FILES +=	srcs/ft_put_c.o srcs/ft_put_d.o srcs/ft_put_s.o srcs/ft_put_x.o srcs/ft_put_p.o srcs/ft_put_u.o srcs/ft_info.o
+FT_PRINTF_OBJ_FILES +=	srcs/ft_info2.o srcs/ft_put_d2.o srcs/ft_put_x2.o
+HEADER_FILES = include
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-ifdef WITH_BONUS
-OBJ_FILES = $(REG_OBJ_FILES) $(BONUS_OBJ_FILES)
-else
-OBJ_FILES = $(REG_OBJ_FILES)
-endif
-
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES)
-	ar rcs ${NAME} ${OBJ_FILES}
+$(NAME): $(LIBFT_OBJ_FILES) ${FT_PRINTF_OBJ_FILES}
+	ar rcs ${NAME} ${LIBFT_OBJ_FILES} ${FT_PRINTF_OBJ_FILES}
 
 %.o: %.c $(HEADER_FILES)
-	$(CC) -c $(CFLAGS) -o $@ $<
-
-bonus:
-	$(MAKE) WITH_BONUS=1 all
+	$(CC) -c $(CFLAGS) -o $@ $< -I ${HEADER_FILES}
 
 clean:
-	rm -f $(REG_OBJ_FILES) $(BONUS_OBJ_FILES)
+	rm -f $(LIBFT_OBJ_FILES) $(FT_PRINTF_OBJ_FILES)
 
 fclean: clean
 	rm -f $(NAME)
@@ -44,4 +42,4 @@ re:
 	$(MAKE) fclean
 	$(MAKE) all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test t_clean

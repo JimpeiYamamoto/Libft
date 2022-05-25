@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isallstr.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjimpei <yjimpei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 16:50:01 by yjimpei           #+#    #+#             */
-/*   Updated: 2022/04/24 16:50:22 by yjimpei          ###   ########.fr       */
+/*   Created: 2021/04/11 18:46:01 by yjimpei           #+#    #+#             */
+/*   Updated: 2021/05/17 21:01:29 by yjimpei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isallstr(char *str, int(f)(char))
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (f(str[i]) == FALSE)
-			return (FALSE);
-		i++;
-	}
-	return (TRUE);
+	write(fd, &c, 1);
 }
